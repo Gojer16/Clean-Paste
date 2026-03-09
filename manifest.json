@@ -1,0 +1,10 @@
+{
+	"id": "clean-paste",
+	"name": "Clean Paste",
+	"version": "1.0.0",
+	"minAppVersion": "1.12.4",
+	"description": "Clean pasted text from AI chats, websites, and docs before saving it to your note.",
+	"author": "Orlando Ascanio",
+	"authorUrl": "https://github.com/gojer16",
+	"isDesktopOnly": false
+}
