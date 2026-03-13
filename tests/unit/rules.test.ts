@@ -11,7 +11,8 @@ import {
 
 describe("rules", () => {
 	it("normalizes headings and list spacing", () => {
-		expect(fixHeadingSpacing("#Title\n##Subtitle")).toBe("# Title\n## Subtitle");
+		expect(fixHeadingSpacing("#Title Words\n##Subtitle Words")).toBe("# Title Words\n## Subtitle Words");
+		expect(fixHeadingSpacing("#Technology #tech #AI")).toBe("#Technology #tech #AI");
 		expect(fixListSpacing("-   one\n\n-   two", true)).toBe("- one\n- two");
 	});
 
