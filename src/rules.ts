@@ -95,19 +95,19 @@ export function fixListSpacing(text: string, normalizeBulletsToDash: boolean): s
 	const cleaned: string[] = [];
 
 	for (const line of lines) {
-		const bulletMatch = line.match(/^(\s*)([-*+•◦▪●])\s*(.*)$/);
+		const bulletMatch = line.match(/^(\s*)([-*+•◦▪●])(?:\s+(.*))?$/);
 		if (bulletMatch) {
 			const indent = normalizeIndentation(bulletMatch[1]);
 			const bullet = normalizeBulletsToDash ? "-" : bulletMatch[2];
-			cleaned.push(`${indent}${bullet} ${bulletMatch[3].trim()}`.trimEnd());
+			cleaned.push(`${indent}${bullet} ${(bulletMatch[3] ?? "").trim()}`.trimEnd());
 			continue;
 		}
 
-		const numberedMatch = line.match(/^(\s*)(\d+)([.)])\s*(.*)$/);
+		const numberedMatch = line.match(/^(\s*)(\d+)([.)])(?:\s+(.*))?$/);
 		if (numberedMatch) {
 			const indent = normalizeIndentation(numberedMatch[1]);
 			cleaned.push(
-				`${indent}${numberedMatch[2]}. ${numberedMatch[4].trim()}`.trimEnd(),
+				`${indent}${numberedMatch[2]}. ${(numberedMatch[4] ?? "").trim()}`.trimEnd(),
 			);
 			continue;
 		}

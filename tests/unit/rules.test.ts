@@ -42,4 +42,14 @@ describe("rules", () => {
 	it("preserves original bullet markers when normalization is disabled", () => {
 		expect(fixListSpacing("•   one\n*   two", false)).toBe("• one\n* two");
 	});
+
+	it("does not false-positive on bold text or numbers without spaces", () => {
+		expect(fixListSpacing("**bold text**", true)).toBe("**bold text**");
+		expect(fixListSpacing("1.23", true)).toBe("1.23");
+	});
+
+	it("handles empty bullet and numbered items properly", () => {
+		expect(fixListSpacing("-", true)).toBe("-");
+		expect(fixListSpacing("1.", true)).toBe("1.");
+	});
 });

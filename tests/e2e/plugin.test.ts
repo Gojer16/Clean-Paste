@@ -115,10 +115,10 @@ describe("plugin flows", () => {
 		const tab = (plugin.addSettingTab as any).mock.calls[0][0];
 		tab.display();
 
-		expect(tab.containerEl.textContent).toContain("Clean Paste settings");
-		expect(Setting.instances).toHaveLength(3);
+		expect(tab.containerEl.textContent).toContain("Clean paste settings");
+		expect(Setting.instances).toHaveLength(4);
 
-		await Setting.instances[0].toggle.onChangeHandler?.(true);
+		await Setting.instances[1].toggle.onChangeHandler?.(true);
 
 		expect(plugin.settings.preserveExtraBlankLinesInParagraphs).toBe(true);
 		expect(plugin.saveData).toHaveBeenCalledWith(plugin.settings);

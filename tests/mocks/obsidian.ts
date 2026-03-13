@@ -48,6 +48,10 @@ export class Setting {
 		return this;
 	}
 
+	setHeading() {
+		return this;
+	}
+
 	setDesc(description: string) {
 		this.description = description;
 		this.containerEl.appendChild(document.createTextNode(description));
