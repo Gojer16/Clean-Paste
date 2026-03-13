@@ -13,7 +13,7 @@ The plugin also adds a left ribbon icon for quickly cleaning the current note.
 ## What it cleans
 
 - excessive blank lines
-- heading spacing
+- heading spacing (while preserving Obsidian tag lists)
 - bullet list spacing
 - numbered list spacing
 - inconsistent list indentation
