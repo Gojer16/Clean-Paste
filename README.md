@@ -37,6 +37,10 @@ npm install
 npm run dev
 ```
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes and release notes.
+
 ## Release notes
 
 - `manifest.json` and `versions.json` should always agree on the minimum supported Obsidian version.
