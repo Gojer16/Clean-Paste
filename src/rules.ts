@@ -80,6 +80,16 @@ export function fixHeadingSpacing(text: string): string {
 	return text
 		.split("\n")
 		.map((line) => {
+			// Obsidian tags: each word must start with exactly one # (not ##).
+			// A multi-word line where every word starts with a single # is a tag list.
+			const trimmed = line.trim();
+			const words = trimmed.split(" ");
+			const isTagList =
+				words.length > 1 && words.every((word) => /^#[^#]/.test(word));
+			if (isTagList) {
+				return line;
+			}
+
 			const match = line.match(/^(\s{0,3}#{1,6})([^\s#].*)$/);
 			if (!match) {
 				return line;
