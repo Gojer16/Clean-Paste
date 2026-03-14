@@ -115,7 +115,7 @@ describe("plugin flows", () => {
 		const tab = (plugin.addSettingTab as any).mock.calls[0][0];
 		tab.display();
 
-		expect(tab.containerEl.textContent).toContain("Clean paste settings");
+		expect(tab.containerEl.textContent).toContain("General");
 		expect(Setting.instances).toHaveLength(4);
 
 		await Setting.instances[1].toggle.onChangeHandler?.(true);
