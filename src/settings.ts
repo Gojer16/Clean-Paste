@@ -13,7 +13,7 @@ export class CleanPasteSettingTab extends PluginSettingTab {
 		const { containerEl } = this;
 		containerEl.empty();
 
-		new Setting(containerEl).setName("General").setHeading();
+		new Setting(containerEl).setName("Paste Options").setHeading();
 
 		new Setting(containerEl)
 			.setName("Preserve extra blank lines in paragraphs")
